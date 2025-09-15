@@ -45,8 +45,7 @@
     }
 
     function startStudy() {
-        // const time = getRandomTime(studyLowerBound, studyUpperBound);
-        const time = 1000;
+        const time = getRandomTime(studyLowerBound, studyUpperBound);
 
         document.body.classList.remove('relax-bg');
         document.body.classList.add('study-bg');
@@ -56,8 +55,7 @@
 
 
     function startRelax() {
-        // const time = getRandomTime(studyLowerBound, studyUpperBound);
-        const time = 1000;
+        const time = getRandomTime(studyLowerBound, studyUpperBound);        
 
         document.body.classList.remove('study-bg');
         document.body.classList.add('relax-bg');
