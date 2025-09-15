@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.study-bg {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.relax-bg {
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+#settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    padding: .5em;
+    border-radius: 20px;
+}
+
+#settings:hover,#settings:focus{
+    background-color:rgb(203, 196, 196);
+}
+
+#settings:active{
+    border: 3px solid black;
+}
