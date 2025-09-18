@@ -64,10 +64,10 @@
     }
 
     function getBounds() {
-        studyLowerBound = localStorage.getItem('studyLowerBound')??30_000;
-        studyUpperBound = localStorage.getItem('studyUpperBound')??90_000;
-        relaxLowerBound = localStorage.getItem('relaxLowerBound')??120_000;
-        relaxUpperBound = localStorage.getItem('relaxUpperBound')??180_000;
+        studyLowerBound = localStorage.getItem('studyLowerBound') ?? 30_000;
+        studyUpperBound = localStorage.getItem('studyUpperBound') ?? 90_000;
+        relaxLowerBound = localStorage.getItem('relaxLowerBound') ?? 120_000;
+        relaxUpperBound = localStorage.getItem('relaxUpperBound') ?? 180_000;
     }
 
     function setBounds() {
@@ -76,8 +76,8 @@
                 alert('The study upper bound cannot be lower than the study lower bound.');
             }
 
-            studyLowerBound = getNumber('What is the study lower bound in seconds?');
-            studyUpperBound = getNumber('What is the study upper bound in seconds?');
+            studyLowerBound = getSeconds('What is the study lower bound in seconds?');
+            studyUpperBound = getSeconds('What is the study upper bound in seconds?');
         } while (studyLowerBound > studyUpperBound)
 
         localStorage.setItem('studyLowerBound', studyLowerBound);
@@ -88,15 +88,15 @@
                 alert('The relax upper bound cannot be lower than the relax lower bound.');
             }
 
-            relaxLowerBound = getNumber('What is the relax lower bound in seconds?');
-            relaxUpperBound = getNumber('What is the relax upper bound in seconds?');
+            relaxLowerBound = getSeconds('What is the relax lower bound in seconds?');
+            relaxUpperBound = getSeconds('What is the relax upper bound in seconds?');
         } while (relaxLowerBound > relaxUpperBound)
             
         localStorage.setItem('relaxLowerBound', relaxLowerBound);
         localStorage.setItem('relaxUpperBound', relaxUpperBound);
     }
 
-    function getNumber(message) {
+    function getSeconds(message) {
         let output;
         do {
             let number = prompt(message);
