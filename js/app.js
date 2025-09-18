@@ -12,6 +12,8 @@
     let relaxUpperBound;
 
     const settingsButton = document.getElementById('settings');
+    const studySound = new Audio('sounds/study-session-sound.m4r')
+    const relaxSound = new Audio('sounds/relax-session-sound.m4r')
 
     app.startUp = function () {
         settingsButton.addEventListener('click', setBounds);
@@ -45,6 +47,8 @@
     }
 
     function startStudy() {
+        studySound.play();
+
         const time = getRandomTime(studyLowerBound, studyUpperBound);
 
         document.body.classList.remove('relax-bg');
@@ -55,7 +59,9 @@
 
 
     function startRelax() {
-        const time = getRandomTime(studyLowerBound, studyUpperBound);        
+        relaxSound.play();
+
+        const time = getRandomTime(studyLowerBound, studyUpperBound);
 
         document.body.classList.remove('study-bg');
         document.body.classList.add('relax-bg');
@@ -91,7 +97,7 @@
             relaxLowerBound = getSeconds('What is the relax lower bound in seconds?');
             relaxUpperBound = getSeconds('What is the relax upper bound in seconds?');
         } while (relaxLowerBound > relaxUpperBound)
-            
+
         localStorage.setItem('relaxLowerBound', relaxLowerBound);
         localStorage.setItem('relaxUpperBound', relaxUpperBound);
     }
