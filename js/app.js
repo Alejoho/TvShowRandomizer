@@ -103,7 +103,7 @@
             output = Number(number);
         } while (Number.isNaN(output))
 
-        output = Math.floor(output);
+        output = Math.floor(output) * 1000;
 
         return output;
     }
