@@ -12,6 +12,7 @@
     let relaxUpperBound;
 
     const settingsButton = document.getElementById('settings');
+    const startButton = document.getElementById('start');
     const studySound = new Audio('sounds/study-session-sound.m4r')
     const relaxSound = new Audio('sounds/relax-session-sound.m4r')
 
@@ -20,7 +21,15 @@
 
         getBounds();
 
+        startButton.addEventListener('click', startLoop)
+    }
+
+    function startLoop() {
+        startButton.classList.add("d-none");
+
         let session = getStarterSession();
+
+
 
         if (session === Session.STUDY) {
             startStudy();

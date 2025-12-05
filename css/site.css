@@ -8,6 +8,7 @@
 
 body {
     min-height: 100vh;
+    background-color: black;
 }
 
 .study-bg {
@@ -27,10 +28,34 @@ body {
     border-radius: 20px;
 }
 
-#settings:hover,#settings:focus{
-    background-color:rgb(203, 196, 196);
+#settings:hover,
+#settings:focus {
+    background-color: rgb(203, 196, 196);
 }
 
-#settings:active{
+#settings:active {
     border: 3px solid black;
+}
+
+#start {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.5rem;
+    padding: .5em;
+    border-radius: 20px;
+}
+
+#start:hover,
+#start:focus {
+    background-color: rgb(203, 196, 196);
+}
+
+#start:active {
+    border: 3px solid black;
+}
+
+.d-none{
+    display: none;
 }
